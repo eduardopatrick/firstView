@@ -11,14 +11,23 @@
 <body>
     <div id="app">
         <p>
-         {{ title }}   
+         {{ giveATitle() }} - <a v-bind:href="link" target="_blank">Google</a>
         </p>
     </div>
-
-    <input type="text" v-on>
     
     <script>
-
+        new Vue ({
+            el: '#app',
+            data: {
+                link: 'https://www.google.com',
+                title: 'Esse é o link do google'
+            },
+            methods: {
+                giveATitle: function(){
+                    return this.title;
+                }
+            },
+        })
     </script>
 </body>
 </html>
